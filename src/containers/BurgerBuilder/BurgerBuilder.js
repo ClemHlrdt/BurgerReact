@@ -31,6 +31,7 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     axios
       .get("https://react-my-burger-a3a97.firebaseio.com/ingredients.json")
       .then(response => {
@@ -117,6 +118,7 @@ class BurgerBuilder extends Component {
     //     this.setState({ loading: false, purchasing: false });
     //     console.log(error);
     //   }); //Firebase endpoint
+    this.props.history.push('/checkout');
   };
   render() {
     const disabledInfo = {
